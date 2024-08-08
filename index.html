@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Produk Top-Up Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 15px;
+            text-align: center;
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+        .product-card h2 {
+            font-size: 1.25em;
+            margin: 10px 0;
+        }
+        .product-card p {
+            color: #555;
+            font-size: 1em;
+            margin: 10px 0;
+        }
+        .product-card button {
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 10px 20px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .product-card button:hover {
+            background-color: #0056b3;
+        }
+        /* Form Styles */
+        .form-container {
+            display: none;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .form-container input, .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+        .form-container button {
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 10px 20px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .form-container button:hover {
+            background-color: #218838;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .product-list {
+                grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Daftar Produk Top-Up Game</h1>
+        <div class="product-list">
+            <!-- Produk 1 -->
+            <div class="product-card">
+                <img src="https://staticg.sportskeeda.com/editor/2022/01/6051c-16434421153229-1920.jpg" alt="Produk 1">
+                <h2>LEVEL UP PASS</h2>
+                <p>Harga: Rp 14.000</p>
+                <button onclick="openForm('Game Credit 0', 300)">Beli Sekarang</button>
+            </div>
+            <!-- Produk 2 -->
+            <div class="product-card">
+                <img src="https://staticg.sportskeeda.com/editor/2022/07/702da-16571929185694-1920.jpg" alt="Produk 2">
+                <h2>MEMBERSHIP MINGGUAN</h2>
+                <p>Harga: Rp 27. 000</p>
+                <button onclick="openForm('MEMBERSHIP 0', 420)">TOP UP</button>
+            </div>
+            <!-- Produk 3 -->
+            <div class="product-card">
+                <img src="https://staticg.sportskeeda.com/editor/2022/07/702da-16571929185694-1920.jpg" alt="Produk 3">
+                <h2>MWEMBERSHIP BULANAN</h2>
+                <p>Harga: Rp 85.OOO</p>
+                <button onclick="openForm('MEMBERSHIP 0', 1000)">TOP UP</button>
+            </div>
+            <!-- Produk 4 -->
+            <div class="product-card">
+                <img src="https://freefireclub.com/wp-content/uploads/2021/01/19C6CC57-DE63-419E-92FC-24A385912D39.jpeg" alt="Produk 4">
+                <h2>DAIMOND 15000</h2>
+                <p>Harga: Rp 1.500.000</p>
+                <button onclick="openForm('Game Credit 15000', 1500000)">Beli Sekarang</button>
+            </div>
+            <!-- Produk 5 -->
+            <div class="product-card">
+                <img src="https://freefireclub.com/wp-content/uploads/2021/01/19C6CC57-DE63-419E-92FC-24A385912D39.jpeg" alt="Produk 5">
+                <h2>DAIMOND 20000</h2>
+                <p>Harga: Rp 2.000.000</p>
+                <button onclick="openForm('Game Credit 20000', 2000000)">Beli Sekarang</button>
+            </div>
+            <!-- Produk 6 -->
+            <div class="product-card">
+                <img src="https://freefireclub.com/wp-content/uploads/2021/01/19C6CC57-DE63-419E-92FC-24A385912D39.jpeg" alt="Produk 6">
+                <h2>DAIMOND 25000</h2>
+                <p>Harga: Rp 2.500.000</p>
+                <button onclick="openForm('Game Credit 25000', 2500000)">Beli Sekarang</button>
+            </div>
+        </div>
+
+        <!-- Form -->
+        <div id="formContainer" class="form-container">
+            <h2>Formulir Top-Up</h2>
+            <label for="productId">ID Pengguna:</label>
+            <input type="text" id="userId" placeholder="Masukkan ID pengguna">
+
+            <label for="productName">Produk yang Dipilih:</label>
+            <input type="text" id="productName" readonly>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Masukkan email Anda">
+
+            <label for="phone">Nomor Telepon:</label>
+            <input type="tel" id="phone" placeholder="Masukkan nomor telepon Anda">
+
+            <label for="paymentMethod">Metode Pembayaran:</label>
+            <select id="paymentMethod">
+                <option value="Dana">Dana</option>
+                <option value="GoPay">GoPay</option>
+                <option value="OVO">OVO</option>
+                <option value="LinkAja">LinkAja</option>
+                <option value="Transfer Bank">Transfer Bank</option>
+            </select>
+
+            <button onclick="submitForm()">Top Up</button>
+        </div>
+    </div>
+
+    <script>
+        function openForm(productName, price) {
+            document.getElementById('productName').value = `${productName} - Rp ${price.toLocaleString()}`;
+            document.getElementById('formContainer').style.display = 'block';
+        }
+
+        function submitForm() {
+            const userId = document.getElementById('userId').value;
+            const productName = document.getElementById('productName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const paymentMethod = document.getElementById('paymentMethod').value;
+
+            if (userId && productName && email && phone && paymentMethod) {
+                alert(`Terima kasih telah bertransaksi!\n\nDetail Transaksi:\nID Pengguna: ${userId}\nProduk: ${productName}\nEmail: ${email}\nNomor Telepon: ${phone}\nMetode Pembayaran: ${paymentMethod}`);
+                document.getElementById('formContainer').reset();
+                document.getElementById('formContainer').style.display = 'none';
+            } else {
+                alert('Mohon lengkapi semua informasi pada formulir.');
+            }
+        }
+    </script>
+</body>
+</html>
